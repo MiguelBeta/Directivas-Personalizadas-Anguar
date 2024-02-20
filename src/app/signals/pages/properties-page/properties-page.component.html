@@ -1,1 +1,41 @@
-<p>properties-page works!</p>
+<h1>Mutaciones</h1>
+<hr>
+
+<div class="row">
+  <div class="col-6">
+
+    <input
+      #txtEmail
+      type="text"
+      class="form-control mb-2"
+      (input)="onFieldUpdated('email', txtEmail.value )"
+      [value]="user().email"
+    >
+
+    <input
+      #txtfirst_name
+      type="text"
+      class="form-control mb-2"
+      (input)="onFieldUpdated('first_name', txtfirst_name.value )"
+      [value]="user().first_name"
+    >
+
+    <input
+      #txtlast_name
+      type="text"
+      class="form-control mb-2"
+      (input)="onFieldUpdated('last_name', txtlast_name.value )"
+      [value]="user().last_name"
+    >
+
+
+  </div>
+
+  <div class="col-6" >
+    <!-- Data del usuario -->
+    <pre>{{ user() | json }}</pre>
+  </div>
+</div>
+
+
+
